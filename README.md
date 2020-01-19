@@ -12,12 +12,12 @@ https://github.com/esp8266/arduino-esp8266fs-plugin
 
 ## 
 ## Specification
-Все файлы системы занимают немного больше 70Кб. Она без проблем влзети в 128 SPIFFS.
+Все файлы системы занимают немного больше 70Кб. Она без проблем влезет в 128 SPIFFS.
 
 
 
 
-# Download [data.zip](https://github.com/renat2985/easy_Iot_file_system/data.zip)
+# Download SPIFFS [data.zip](https://github.com/renat2985/easy_Iot_file_system/raw/master/data.zip)
 
 
 
@@ -28,9 +28,9 @@ https://github.com/esp8266/arduino-esp8266fs-plugin
 
 
 
-## Проекты на этой файловой системе.
+## Проекты на этой файловой системе:
 
-## Пишите сюда свои, я их с удовольстием добавлю.
+### Пишите сюда свои, я их с удовольстием добавлю.
 
 #### Jalousie: [https://github.com/tretyakovsa/jaluzi](https://github.com/tretyakovsa/jaluzi)
 
