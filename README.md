@@ -1,6 +1,6 @@
 # easy Iot file system for ESP8266, ESP32
 
-<a href="https://raw.githubusercontent.com/renat2985/easy_Iot_file_system/master/tutorial/screen4.png"><img src="https://raw.githubusercontent.com/renat2985/easy_Iot_file_system/master/tutorial/screen4.png" align="left" height="400" width="400" ></a>
+<a href="https://raw.githubusercontent.com/renat2985/easy_Iot_file_system/master/img/screen4.png"><img src="https://raw.githubusercontent.com/renat2985/easy_Iot_file_system/master/img/screen4.png" align="left" height="220" width="400" ></a>
 
 
 # Upload instruction
