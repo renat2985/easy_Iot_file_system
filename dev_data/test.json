@@ -4,7 +4,7 @@
  ],
  "title": [{
   "type":"text",
-  "title":"Добро пожаловать!"
+  "title":"Вы открылы вторую страницу!"
  }],
  "class":"col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6",
  "content":[
@@ -12,42 +12,44 @@
 
   {
    "type":"h2",
-   "title":"У вас все получилось!"
+   "title":"Сейчас вы открылы test.json файл!"
   },
-
-
-  {
-   "type":"hr"
-  },
-
-  {
-   "type":"h3",
-   "title":"Полную документацию вы можете увидеть <a href='https://github.com/renat2985/easy_Iot_file_system/wiki'>здесь</a>"
-  },
-
-
-  {
-   "type":"h3",
-   "title":"Так же много полезного найдете на моем <a href='https://www.youtube.com/playlist?list=PL6NJTNxbvy-IPTDQk8XjTV41oRrFafrRi'>Youtube канале</a>"
-  },
-
 
   {
    "type":"text",
-   "title":"Теперь давайте попробуем нажать на Ctrl+M и с право вы увидете блок который строит эту страницу! Ниже есть кнопка, давайте попробуем ее переименовать, сохранить и нажать на нее",
-   "class":"alert alert-warning"
+   "title":"Здесь маленький пример из wiki о том как просто вы можете отправлять нужные вам ajax get запросы, попробуйте ниже нажать на отправить (Нажмите Сtrl+M что бы видеть эти GET запросы)",
+   "class":"alert alert-info"
   },
 
 
+  {
+   "type": "input",
+   "name": "testName"
+  },
 
+  {
+   "type": "button",
+   "title": "Отправить",
+   "action": "device?ssdp=[[testName]]&space=456",
+   "class":"btn btn-info"
+  },
+
+
+  {
+   "type":"h4",
+   "title":"По всем вопросам вы можете писать мне в Skype: renat2985"
+  },
 
 
   {
    "type": "link",
-   "title": "Кнопка котоная ниже :)",
-   "action": "index.htm?test",
+   "title": "{{LangDevices}} :)",
+   "action": "index.htm",
    "class":"btn btn-block btn-info"
   },
+
+
+
 
 
   {
