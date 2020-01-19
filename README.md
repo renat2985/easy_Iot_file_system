@@ -1,4 +1,4 @@
-# easy Iot file system for ESP8266, ESP32
+# Easy Iot file system for ESP8266, ESP32
 
 <a href="https://raw.githubusercontent.com/renat2985/easy_Iot_file_system/master/img/screen4.png"><img src="https://raw.githubusercontent.com/renat2985/easy_Iot_file_system/master/img/screen4.png" align="left" height="220" width="400" ></a>
 
@@ -7,8 +7,8 @@
 Вам нужно установить Arduino ESP8266 filesystem uploader
 https://github.com/esp8266/arduino-esp8266fs-plugin
 
-А в этом проекте вам нужна папочка data, все остальные папки и файлы, нужные только мне для более удобной разработнки данного проекта.
-Разжимать файлы не рекомендуется, т.к. они будут значительно дольше грузитьяс.
+А в этом проекте вам нужна папочка data, копируйте и помещяйте ее в своей проект. все остальные файлы нужны только мне для более удобной разработнки данного проекта.
+
 
 
 ## Specification
@@ -17,7 +17,7 @@ https://github.com/esp8266/arduino-esp8266fs-plugin
 
 
 
-# Download [Build.Spiffs.flash.1Mb.256Kb.2018.12.03.zip](https://github.com/tretyakovsa/Sonoff_WiFi_switch/releases/download/3.0/Build.Spiffs.flash.1Mb.256Kb.2018.12.03.zip)
+# Download [data.zip](https://github.com/renat2985/easy_Iot_file_system/data.zip)
 
 
 
@@ -27,19 +27,14 @@ https://github.com/esp8266/arduino-esp8266fs-plugin
 
 
 
-### Schematic
 
-![alt](https://raw.githubusercontent.com/tretyakovsa/Sonoff_WiFi_switch/master/tutorial/sonoff.jpg)
-
-
-
-
-## Othe...
-Проекте на этой файловой системе. Пишите сюда свои я их с удовольстием добавлю.
+## Проекты на этой файловой системе. Пишите сюда свои, я их с удовольстием добавлю.
 
 #### Jalousie: [https://github.com/tretyakovsa/jaluzi](https://github.com/tretyakovsa/jaluzi)
 
 #### RGB: [https://github.com/renat2985/rgb](https://github.com/renat2985/rgb)
+
+#### Sonoff_WiFi_switch: [https://github.com/tretyakovsa/Sonoff_WiFi_switch](https://github.com/tretyakovsa/Sonoff_WiFi_switch) 
 
 
 #### Themes you can download here: [http://bootswatch.com/](http://bootswatch.com/)
