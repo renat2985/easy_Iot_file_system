@@ -45,7 +45,7 @@
   {
    "type": "link",
    "title": "Кнопка котоная ниже :)",
-   "action": "page.htm?test",
+   "action": "index.htm?test",
    "class":"btn btn-block btn-info"
   },
 
