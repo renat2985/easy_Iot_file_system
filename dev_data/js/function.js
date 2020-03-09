@@ -210,7 +210,7 @@ function setContent(stage,load_page) {
     jsonFiles.sort(function(a,b){return (a.name < b.name)?1:((b.name < a.name)?-1:0);});
     for(var i = 0;i<jsonFiles.length;i++) {
      if (jsonFiles[i].name.substr(-4) == 'json' || jsonFiles[i].name.substr(-7) == 'json.gz'){
-      elem('file-list').innerHTML += '<a href="/page.htm?'+jsonFiles[i].name.split('.')[0]+'">'+jsonFiles[i].name+'<\/a><br>';
+      elem('file-list').innerHTML += '<a href="/'+(location.pathname=='index.htm'?'index':'page')+'.htm?'+jsonFiles[i].name.split('.')[0]+'">'+jsonFiles[i].name+'<\/a><br>';
      }
     }
    },true);

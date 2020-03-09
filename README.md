@@ -42,7 +42,7 @@ https://github.com/esp8266/arduino-esp8266fs-plugin
 #### Sonoff_WiFi_switch: [https://github.com/tretyakovsa/Sonoff_WiFi_switch](https://github.com/tretyakovsa/Sonoff_WiFi_switch) 
 
 
-#### Themes you can download here: [http://bootswatch.com/](http://bootswatch.com/)
+#### Themes you can download here: [https://bootswatch.com/3/](https://bootswatch.com/3/)
 
 
 ## Donation
