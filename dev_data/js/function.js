@@ -89,17 +89,29 @@ document.onkeydown = function(e){
  }
 }
 
+function log(log) {
+ var listitems = document.getElementById("url-content").getElementsByTagName("li")
+ for (var i = 0; i < listitems.length; i++) {
+  if (i > 70) {
+   document.getElementById("url-content").removeChild(listitems[0]);
+  }
+ }
+ elem('url-content').innerHTML += log;
+}
+
 function run_socket(url) {
  var connection = new WebSocket(url.replace('socket ','ws://'), ['arduino']);
  connection.onopen = function () {
   connection.send('Connect '+new Date());
-  elem('url-content').innerHTML += '<li><span class="label label-warning">WS</span> <a href="'+url+'" class="btn btn-link" style="text-transform:none;text-align:left;white-space:normal;display:inline" target="_blank">'+url+'</a> <span class="label label-default">Connected</span></li>';
+  log('<li><span class="label label-warning">WS</span> <small>'+url+'</small> <span class="label label-default">Connected</span></li>');
  };
  connection.onerror = function (error) {
-  console.log('WebSocket Error ', error);
+ // console.log('WebSocket Error ', error);
+  log('<li><span class="label label-warning">WS</span> <small>'+url+'</small> <span class="label label-danger">'+error+'</span></li>');
  };
  connection.onmessage = function (e) {
-  console.log('Server: ', e.data);
+ // console.log('Server: ', e.data);
+  log('<li><span class="label label-warning">WS</span> <small>'+url+'</small> <span class="label label-default">Send</span></li><li style="margin:5px 0;" class="alert alert-info">'+e.data+'</li>');
   var socket_data=JSON.parse(e.data);
   jsonResponse_new = mergeObject(jsonResponse, socket_data);
   elem('content').innerHTML = '';
@@ -131,16 +143,16 @@ function setContent(stage,load_page) {
        var jsonResponseOld = jsonResponse;
        jsonResponse = mergeObject(jsonResponseNew, jsonResponseOld);
        //jsonResponse = Object.assign(jsonResponseNew, jsonResponseOld);
-       elem('url-content').innerHTML += '<li><span class="label label-warning">GET</span> <a href="'+jsonPage.configs[fileNumber]+'" class="btn btn-link" style="text-transform:none;text-align:left;white-space:normal;display:inline" target="_blank">'+jsonPage.configs[fileNumber]+'</a> <span class="label label-default">200 OK</span></li>';
+       log('<li><span class="label label-warning">GET</span> <a href="'+jsonPage.configs[fileNumber]+'" class="btn btn-link" style="text-transform:none;text-align:left;white-space:normal;display:inline" target="_blank">'+jsonPage.configs[fileNumber]+'</a> <span class="label label-default">200 OK</span></li>');
       } else {
        //For old version socket
        if (jsonPage.configs[fileNumber].indexOf('socket ')  >= 0){
         if (stage == 'first') {
          run_socket(jsonPage.configs[fileNumber]);
         }
-        elem('url-content').innerHTML += '<li><span class="label label-warning">WS</span> <a href="'+jsonPage.configs[fileNumber]+'" class="btn btn-link" style="text-transform:none;text-align:left;white-space:normal;display:inline" target="_blank">'+jsonPage.configs[fileNumber]+'</a> <span class="label label-default">Connected</span></li>';
+        log('<li><span class="label label-warning">WS</span> <a href="'+jsonPage.configs[fileNumber]+'" class="btn btn-link" style="text-transform:none;text-align:left;white-space:normal;display:inline" target="_blank">'+jsonPage.configs[fileNumber]+'</a> <span class="label label-default">Connected</span></li>');
        } else {
-        elem('url-content').innerHTML += '<li><span class="label label-warning">GET</span> <a href="'+jsonPage.configs[fileNumber]+'" class="btn btn-link" style="text-transform:none;text-align:left;white-space:normal;display:inline" target="_blank">'+jsonPage.configs[fileNumber]+'</a> <span class="label label-danger">File Not Found</span></li>';
+        log('<li><span class="label label-warning">GET</span> <a href="'+jsonPage.configs[fileNumber]+'" class="btn btn-link" style="text-transform:none;text-align:left;white-space:normal;display:inline" target="_blank">'+jsonPage.configs[fileNumber]+'</a> <span class="label label-danger">File Not Found</span></li>');
        }
       }
       fileNumber++;
@@ -177,7 +189,7 @@ function setContent(stage,load_page) {
         viewTemplate(jsonPage,jsonResponse);
         html("edit-save","oncli"+"ck");
        } else {
-        elem('url-content').innerHTML += '<li class="alert alert-danger" style="margin:5px 0;">content array not found in "'+pages[0]+'.json"<\/li>';
+        log('<li class="alert alert-danger" style="margin:5px 0;">content array not found in "'+pages[0]+'.json"<\/li>');
         elem('content').innerHTML += '<br><br><h1>File "'+pages[0]+'.json" cannot view.<\/h1><hr><h2>You can edit it right.<\/h2>';
         toggle('edit-content');
         toggle('url-content');
@@ -999,7 +1011,7 @@ function send_request(submit,server,state){
   submit.value=old_submit;
   var element =  elem('url-content');
   if (typeof(element) != 'undefined' && element != null){
-   element.innerHTML += '<li><span class="label label-warning">GET</span> <a href="'+server+'" class="btn btn-link" style="text-transform:none;text-align:left;white-space:normal;display:inline">'+server+'</a> <span class="label label-'+(responses=='FileNotFound'?'danger':'default')+'">'+(responses=='FileNotFound'?'File Not Found':'200 OK')+'</span></li>';
+   log('<li><span class="label label-warning">GET</span> <a href="'+server+'" class="btn btn-link" style="text-transform:none;text-align:left;white-space:normal;display:inline">'+server+'</a> <span class="label label-'+(responses=='FileNotFound'?'danger':'default')+'">'+(responses=='FileNotFound'?'File Not Found':'200 OK')+'</span></li>');
   }
   var ddnsUrl1 =  elem('ddns-url1');
   if (typeof(ddnsUrl1) != 'undefined' && ddnsUrl1 != null){
@@ -1045,13 +1057,13 @@ function send_request(submit,server,state){
       htmlblock.href = response.action;
      }
      if (typeof(element) != 'undefined' && element != null){
-      element.innerHTML += '<li class="alert alert-info" style="margin:5px 0;"><a href="#'+block[i].slice(2,-2)+'" class="label label-success">'+block[i]+'</a> '+responses.replace(/</g,'&lt;')+'</li>';
+      log('<li class="alert alert-info" style="margin:5px 0;"><a href="#'+block[i].slice(2,-2)+'" class="label label-success">'+block[i]+'</a> '+responses.replace(/</g,'&lt;')+'</li>');
      }
     }
    }
   } else {
    if (typeof(element) != 'undefined' && element != null){
-    element.innerHTML += '<li class="alert alert-info" style="margin:5px 0;">'+responses.replace(/</g,'&lt;')+'</li>';
+    log('<li class="alert alert-info" style="margin:5px 0;">'+responses.replace(/</g,'&lt;')+'</li>');
    }
   }
   // load('next');
