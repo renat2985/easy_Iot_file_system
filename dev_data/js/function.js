@@ -93,6 +93,7 @@ function run_socket(url) {
  var connection = new WebSocket(url.replace('socket ','ws://'), ['arduino']);
  connection.onopen = function () {
   connection.send('Connect '+new Date());
+  elem('url-content').innerHTML += '<li><span class="label label-warning">WS</span> <a href="'+url+'" class="btn btn-link" style="text-transform:none;text-align:left;white-space:normal;display:inline" target="_blank">'+url+'</a> <span class="label label-default">Connected</span></li>';
  };
  connection.onerror = function (error) {
   console.log('WebSocket Error ', error);
@@ -105,7 +106,11 @@ function run_socket(url) {
   viewTemplate(jsonPage,jsonResponse_new);
  }
 }
-
+function array_socket(socket) {
+ for(var key in socket) {
+  run_socket(renameBlock(jsonResponse, socket[key]));
+ }
+}
 function setContent(stage,load_page) {
  jsonResponse = '';
  var pages = window.location.search.substring(1).split("&");
@@ -128,6 +133,7 @@ function setContent(stage,load_page) {
        //jsonResponse = Object.assign(jsonResponseNew, jsonResponseOld);
        elem('url-content').innerHTML += '<li><span class="label label-warning">GET</span> <a href="'+jsonPage.configs[fileNumber]+'" class="btn btn-link" style="text-transform:none;text-align:left;white-space:normal;display:inline" target="_blank">'+jsonPage.configs[fileNumber]+'</a> <span class="label label-default">200 OK</span></li>';
       } else {
+       //For old version socket
        if (jsonPage.configs[fileNumber].indexOf('socket ')  >= 0){
         if (stage == 'first') {
          run_socket(jsonPage.configs[fileNumber]);
@@ -159,6 +165,9 @@ function setContent(stage,load_page) {
         document.body.innerHTML += '<a href="/donate.htm" class="hidden-xs btn btn-link" target="_blank" style="position:fixed;bottom:0;"><i class="fav-img"></i> '+(jsonResponse.LangDonate?jsonResponse.LangDonate:'Donate')+'<\/a>';
         val('edit-json', jsonEdit);
         toggle('container_column','hide');
+        if (jsonPage.socket){
+         array_socket(jsonPage.socket);
+        }
        } else {
         elem('content').innerHTML = '';
         jsonPage=JSON.parse(val('edit-json'));
@@ -550,14 +559,14 @@ function loadJson(file, setDelay, jsonResponse) {
 }
 
 function loadSelect(file,name_val,state_val) {
-  ajax.get(file+'?'+Math.random(),{},function(response) {
-   var result = JSON.parse(response);
-   option = '';
-   for(var key in result) {
-    option += '<option value="'+renameBlock(jsonResponse, key)+'"'+(state_val==key?' selected':'')+'>'+renameBlock(jsonResponse, result[key])+'<\/option>';
-   }
-   elem(name_val).innerHTML = option;
-  },true);
+ ajax.get(file+'?'+Math.random(),{},function(response) {
+  var result = JSON.parse(response);
+  option = '';
+  for(var key in result) {
+   option += '<option value="'+renameBlock(jsonResponse, key)+'"'+(state_val==key?' selected':'')+'>'+renameBlock(jsonResponse, result[key])+'<\/option>';
+  }
+  elem(name_val).innerHTML = option;
+ },true);
 }
 
 function loadFile(file) {
