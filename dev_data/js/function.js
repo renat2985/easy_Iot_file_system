@@ -97,6 +97,7 @@ function log(log) {
   }
  }
  elem('url-content').innerHTML += log;
+ elem('url-content').scrollTop = elem('url-content').scrollHeight;
 }
 
 function run_socket(url) {
