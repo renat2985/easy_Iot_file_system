@@ -29,6 +29,8 @@ rm data/js/chartist.min.js.gz
 rm data/js/chart.js.gz
 rm data/js/siema.min.js.gz
 
+zip -r data.zip data/*
+
 #test -f *.generic.bin && cp *.generic.bin build/build.generic_flash_size_1Mb.254Kb_`date '+%G.%m.%d'`.bin
 
 
