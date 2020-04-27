@@ -419,7 +419,7 @@ function viewTemplate(jsonPage,jsonResponse,othe_opt) {
      } else {
       loadSelect(jsonSelect, name_val, state_val);
      }
-     element.innerHTML += '<div class="'+hidden+'"><select class="form-control '+class_val+'" '+style_val+' '+action_val+' id="'+name_val+'">'+option+'<\/select></div>';
+     element.innerHTML += '<select class="form-control '+hidden+class_val+'" '+style_val+' '+action_val+' id="'+name_val+'">'+option+'<\/select>';
     }
     if (type_val == 'dropdown') {
      var option = '';
