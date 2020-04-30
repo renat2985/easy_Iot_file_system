@@ -940,13 +940,17 @@ function loadCommandHelp(jsonParam,where,to) {
  html(where, 'Loading...');
  elem(to).readOnly = (jsonParam=='voice'?true:false);
  var domain = elem('ssdp-list'+where.replace(/[^0-9]/gi,'')).options[elem('ssdp-list'+where.replace(/[^0-9]/gi,'')).selectedIndex].value;
- ajax.get('http://'+domain+'/'+(jsonParam=='voice'?'scenary.save.txt':'command-help.json')+'?'+Math.random(),{},function(response) {
+
+ ajax.get('http://'+domain+'/config.options.json?'+Math.random(),{},function(response) {
+  var view=JSON.parse(response);
+
+ ajax.get('http://'+domain+'/'+(jsonParam=='voice'?'scenary/'+view['configs']+'.txt':'command-help.json')+'?'+Math.random(),{},function(response) {
   html(where, ' ');
   var option = '';
   if (jsonParam == 'voice') {
    var ip=response.split("if voice = ");
    for (var i in ip) {
-    var command = ip[i].substr(0,ip[i].indexOf("\n"));
+    var command = ip[i].substr(0,ip[i].indexOf("\r\n"));
     if (command && command.indexOf(" = ") == -1 ) {
      option+='<li><a href="#" onclick="val(\''+to+'\',\''+command+'\');return false">'+command.replace(/_/g,' ')+'</a></li>';
     }
@@ -962,6 +966,14 @@ function loadCommandHelp(jsonParam,where,to) {
   }
   html(where, (ip.header?ip.header:'')+'<ul>'+option+'</ul>'+(ip.footer?ip.footer:''));
  },true);
+
+
+
+ },true);
+
+
+
+
 }
 
 function loadLive(ip,file,where) {
