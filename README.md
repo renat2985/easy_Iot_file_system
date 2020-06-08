@@ -19,8 +19,9 @@ https://github.com/esp8266/arduino-esp8266fs-plugin
 
 # Download SPIFFS [data.zip](https://github.com/renat2985/easy_Iot_file_system/raw/master/data.zip)
 
-# [Demo](http://backup.privet.lv/easy_Iot_file_system/index.htm)
+## [Demo](http://backup.privet.lv/easy_Iot_file_system/index.htm)
 
+## [Wiki](https://github.com/renat2985/easy_Iot_file_system/wiki)
 
 
 
