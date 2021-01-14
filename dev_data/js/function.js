@@ -720,15 +720,16 @@ function loadCSV(file,title) {
     if (i == 0) {
      tbody += '<th>'+table_td[y]+'<\/th>';
     } else {
+    if (title[y]) {
      if (title[y] == 'html') {
       tbody += '<td>'+table_td[y]+'<\/td>';
      } else if (title[y] == 'del') {
       tbody += '<td><input class="btn btn-danger" type="button" value="'+table_td[y]+'" onclick="location.href=\'/del?file='+file+'&line='+i+'\'"><\/td>';
      } else if (title[y].split(":")[0] == 'select') {
-     //} else if (title[y].indexOf("select") == 1) {
+     //} else if (title[y].indexOf("select") == 0) {
        tbody += '<td><select class="form-control" id="csv-select-'+i+'"><\/select><\/td>';
        loadSelect(title[y].split(":")[1],"csv-select-"+i,table_td[y]);
-      /*
+       /*
       var select_arr = table_td[y].split(",");
       select_html ='';
       for (var p = 0; p < select_arr.length; p++) {
@@ -739,6 +740,7 @@ function loadCSV(file,title) {
      } else {
       tbody += '<td><input class="form-control" type="'+title[y]+'" value="'+table_td[y]+'" '+(title[y]=='checkbox'?'onclick="(this.checked?this.value=1:this.value=0)"':'')+' '+(title[y]=='checkbox' && table_td[y]==1?'checked':'')+'><\/td>';
      }
+    }
     }
    }
    tbody += '</tr>';
@@ -767,7 +769,7 @@ function html_to_csv(file) {
        //  if (select_new_arr[t] != cols[j+1].value) {
        //    select_new_final += ','+select_new_arr[t];
        //  }
-      // }
+       //}
        row.push(select_new_final);
        j++;
       } else {
