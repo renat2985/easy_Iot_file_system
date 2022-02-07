@@ -46,28 +46,22 @@ https://github.com/esp8266/arduino-esp8266fs-plugin
 #### Themes you can download here: [https://bootswatch.com/3/](https://bootswatch.com/3/)
 
 
-## Donation
 
-If you like this project, you can give me a cup of coffee :)
+## :battery: Donation
 
-#### YandexMoney
+If you like this project, you can give me a cup of coffee :coffee:
 
-- 410011740665305
+#### Bitcoin:
 
-#### WebMoney
-
-- Z343206590467
-- R124424038680
-- U883416626152
-- E211342115147
-
-#### AdvCash
-
-- U 0586 7862 1354
-- E 8788 6352 1126
-- R 7705 0208 6566
+- 19xg6pA4RzSW3o4ZUyTyn5t4tY3tqLXHbe
 
 #### PayPal
 
-- [Send 5Eur](https://www.paypal.me/renat2985/5)
+- [https://www.paypal.me/RKevrels](https://www.paypal.me/RKevrels/5)
+
+#### WebMoney
+
+- Z242847016348
+- R466173026928
+- E555861976545
 
