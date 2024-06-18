@@ -363,6 +363,9 @@ function viewTemplate(jsonPage,jsonResponse,othe_opt) {
     var state_val = renameBlock(jsonResponse, obj.state);
     var response_val = renameBlock(jsonResponse, obj.response);
     var module_val = obj.module;
+    var min_val = obj.min;
+    var max_val = obj.max;
+    var step_val = obj.step;
     var type_val=obj.type;
 
     var hidden = '';
@@ -395,6 +398,11 @@ function viewTemplate(jsonPage,jsonResponse,othe_opt) {
      if (action_val) action_val = 'onfocusout="send_request(this, \''+(typeof module_val!='undefined'&&module_val?'cmd?command=':'')+'\'+renameGet(\''+obj.action+'\'),\''+response_val+'\')"';
      if (socket_val) action_val = 'onfocusout="send_socket(this, \'\', \''+socket_val+'\')"';
      element.innerHTML += '<input '+action_val+' id="'+name_val+'" class="form-control '+hidden+class_val+'" '+style_val+' '+(pattern_val?'pattern="'+pattern_val+'"':'')+' placeholder="'+renameBlock(jsonResponse, obj.title)+'" value="'+state_val+'">';
+    }
+    if (type_val == 'input2') {
+      if (action_val) action_val = 'onfocusout="send_request(this, \''+(typeof module_val!='undefined'&&module_val?'cmd?command=':'')+'\'+renameGet(\''+obj.action+'\'),\''+response_val+'\')"';
+      if (socket_val) action_val = 'onfocusout="send_socket(this, \'\', \''+socket_val+'\')"';
+      element.innerHTML += '<input '+action_val+' id="'+name_val+'" class="form-control '+hidden+class_val+'" '+style_val+' '+(pattern_val?'pattern="'+pattern_val+'"':'')+' placeholder="'+renameBlock(jsonResponse, obj.title)+'"type="number" min="'+min_val+'" max="'+max_val+'" step="'+step_val+'" value="'+state_val+'">';
     }
     if (type_val == 'password') {
      if (action_val) action_val = 'onfocusout="send_request(this, \''+(typeof module_val!='undefined'&&module_val?'cmd?command=':'')+'\'+renameGet(\''+obj.action+'\'),\''+response_val+'\')"';
@@ -733,7 +741,7 @@ function loadCSV(file,title) {
       var select_arr = table_td[y].split(",");
       select_html ='';
       for (var p = 0; p < select_arr.length; p++) {
-        select_html += '<option value="'+select_arr[p]+'">'+select_arr[p]+'<\/option>';
+        select_html += '<option value="'+select_arr[p]+'">'+select_arr[p]+'<\/option>'; 
       }
       tbody += '<td><select class="form-control">'+select_html+'<\/select><\/td>';
       */
@@ -759,7 +767,7 @@ function html_to_csv(file) {
    if (typeof cols[j].value !== "undefined") {
     fixed = cols[j].value;
    } else {
-    fixed = cols[j].innerHTML;
+    fixed = cols[j].innerHTML; 
    }
    if (fixed.indexOf("<input") == -1) {
      if (cols[j].innerHTML.indexOf("select") == 1) {
@@ -773,7 +781,7 @@ function html_to_csv(file) {
        row.push(select_new_final);
        j++;
       } else {
-       row.push(fixed);
+       row.push(fixed); 
      }
    }
   }
