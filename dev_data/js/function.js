@@ -393,17 +393,17 @@ function viewTemplate(jsonPage,jsonResponse,othe_opt) {
     }
     if (type_val == 'input') {
      if (action_val) action_val = 'onfocusout="send_request(this, \''+(typeof module_val!='undefined'&&module_val?'cmd?command=':'')+'\'+renameGet(\''+obj.action+'\'),\''+response_val+'\')"';
-     if (socket_val) action_val = 'onfocusout="send_socket(this, \'\', \''+socket_val+'\')"';
+     if (socket_val) action_val = 'onfocusout="send_socket(this, \'\', renameGet(\''+socket_val+'\'))"';
      element.innerHTML += '<input '+action_val+' id="'+name_val+'" class="form-control '+hidden+class_val+'" '+style_val+' '+(pattern_val?'pattern="'+pattern_val+'"':'')+' placeholder="'+renameBlock(jsonResponse, obj.title)+'" value="'+state_val+'">';
     }
     if (type_val == 'password') {
      if (action_val) action_val = 'onfocusout="send_request(this, \''+(typeof module_val!='undefined'&&module_val?'cmd?command=':'')+'\'+renameGet(\''+obj.action+'\'),\''+response_val+'\')"';
-     if (socket_val) action_val = 'onfocusout="send_socket(this, \'\', \''+socket_val+'\')"';
+     if (socket_val) action_val = 'onfocusout="send_socket(this, \'\', renameGet(\''+socket_val+'\'))"';
      element.innerHTML += '<input '+action_val+' id="'+name_val+'" class="form-control '+hidden+class_val+'" '+style_val+' '+(pattern_val?'pattern="'+pattern_val+'"':'')+' placeholder="'+renameBlock(jsonResponse, obj.title)+'" value="'+state_val+'" onfocus="this.type=\'text\'" type="password">';
     }
     if (type_val == 'button') {
      if (action_val) action_val = 'onclick="send_request(this, \''+(typeof module_val!='undefined'&&module_val?'cmd?command=':'')+'\'+renameGet(\''+obj.action+'\'),\''+response_val+'\')"';
-     if (socket_val) action_val = 'onclick="send_socket(this, \'\', \''+socket_val+'\')"';
+     if (socket_val) action_val = 'onclick="send_socket(this, \'\', renameGet(\''+socket_val+'\'))"';
      if (actiondown_val) actiondown_val = 'onmouseup="send_request(this, \''+(typeof module_val!='undefined'&&module_val?'cmd?command=':'')+'\'+renameGet(\''+obj.action+'\'),\''+response_val+'\')"';
      element.innerHTML += '<input id="'+name_val+'" '+action_val+' '+actiondown_val+' class="'+hidden+class_val+'" '+style_val+' value="'+renameBlock(jsonResponse, obj.title)+'" type="button">';
     }
@@ -411,19 +411,19 @@ function viewTemplate(jsonPage,jsonResponse,othe_opt) {
      var checked = '';
      if (!obj.design) {
       if (state_val == 1){ checked = 'checked'; }
-      if (action_val) { action_val = 'onchange="val(this.id,(this.checked?\'1\':\'0\'));send_request(this, \''+(typeof module_val!='undefined'&&module_val?'cmd?command=':'')+'\'+renameGet(\''+obj.action+'\'),\''+response_val+'\')"'; } else { action_val = 'onchange="val(this.id,(this.checked?\'1\':\'0\'));"'; }
-      if (socket_val) action_val = 'onchange="send_socket(this, \'\', \''+socket_val+'\')"';
+      if (action_val) { action_val = 'onchange="val(this.id,(this.checked?\'1\':\'0\'));send_request(this, \''+(typeof module_val!='undefined'&&module_val?'cmd?command=':'')+'\'+renameGet(\''+obj.action+'\'),\''+response_val+'\')"'; } else { action_val = 'onchange="val(this.id,(this.checked?\'1\':\'0\'));"'; };
+      if (socket_val) action_val = 'onchange="send_socket(this, \'\', renameGet(\''+socket_val+'\'))"';
       element.innerHTML += '<label '+style_val+'><input id="'+name_val+'" value="'+state_val+'" '+action_val+' type="checkbox" class="'+hidden+class_val+'" '+checked+'> '+renameBlock(jsonResponse, obj.title)+'<\/label>';
      } else {
       if (state_val == 0){ checked = 'checked=""'; }
       if (action_val) { action_val = 'onchange="val(this.id,(this.checked?\'0\':\'1\'));send_request(this, \''+(typeof module_val!='undefined'&&module_val?'cmd?command=':'')+'\'+renameGet(\''+obj.action+'\'),\''+response_val+'\')"'; } else { action_val = 'onchange="val(this.id,(this.checked?\'0\':\'1\'));"'; }
-      if (socket_val) action_val = 'onchange="send_socket(this, \'\', \''+socket_val+'\')"';
+      if (socket_val) action_val = 'onchange="send_socket(this, \'\', renameGet(\''+socket_val+'\'))"';
       element.innerHTML += '<div class="toggle-button-cover" '+style_val+'><div class="button-cover"><div class="button r '+obj.design+'"><input type="checkbox" id="'+name_val+'" '+action_val+' class="checkbox" '+checked+'><div class="knobs"></div><div class="layer"></div></div></div><label for="'+name_val+'">'+renameBlock(jsonResponse, obj.title)+'<\/label></div>';
      }
     }
     if (type_val == 'range') {
-     if (action_val) action_val = 'onchange="send_request(this, \''+(typeof module_val!='undefined'&&module_val?'cmd?command=':'')+'\'+renameGet(\''+obj.action+'\'),\''+response_val+'\')"';
-     if (socket_val) action_val = 'onclick="send_socket(this, \'\', \''+socket_val+'\')"';
+     if (action_val) action_val = 'onclick="send_request(this, \''+(typeof module_val!='undefined'&&module_val?'cmd?command=':'')+'\'+renameGet(\''+obj.action+'\'),\''+response_val+'\')"';
+     if (socket_val) action_val = 'onclick="send_socket(this, \'\', renameGet(\''+socket_val+'\'))"';
      element.innerHTML += '<div class="'+hidden+'"><label id="'+(name_val?'label-'+name_val:'')+'" '+style_val+' style="display:block;"><h4>'+renameBlock(jsonResponse, obj.title)+'<\/h4> <input id="'+name_val+'" class="form-control '+class_val+'" '+action_val+' '+pattern_val+' value="'+state_val+'" type="range"><\/label></div>';
     }
     if (type_val == 'table') {
@@ -433,7 +433,7 @@ function viewTemplate(jsonPage,jsonResponse,othe_opt) {
     }
     if (type_val == 'select') {
      if (action_val) action_val = 'onchange="send_request(this, \''+(typeof module_val!='undefined'&&module_val?'cmd?command=':'')+'\'+renameGet(\''+obj.action+'\'),\''+response_val+'\')"';
-     if (socket_val) action_val = 'onchange="send_socket(this, \'\', \''+socket_val+'\')"';
+     if (socket_val) action_val = 'onchange="send_socket(this, \'\', renameGet(\''+socket_val+'\'))"';
      var option = '';
      jsonSelect = obj.title;
      if (isObject(jsonSelect)) {
