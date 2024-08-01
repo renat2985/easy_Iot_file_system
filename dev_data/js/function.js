@@ -393,17 +393,17 @@ function viewTemplate(jsonPage,jsonResponse,othe_opt) {
     }
     if (type_val == 'input') {
      if (action_val) action_val = 'onfocusout="send_request(this, \''+(typeof module_val!='undefined'&&module_val?'cmd?command=':'')+'\'+renameGet(\''+obj.action+'\'),\''+response_val+'\')"';
-     if (socket_val) action_val = 'onfocusout="send_socket(this, \'\', \''+socket_val+'\')"';
+     if (socket_val) action_val = 'onfocusout="send_socket(this, \'\', renameGet(\''+socket_val+'\'))"';
      element.innerHTML += '<input '+action_val+' id="'+name_val+'" class="form-control '+hidden+class_val+'" '+style_val+' '+(pattern_val?'pattern="'+pattern_val+'"':'')+' placeholder="'+renameBlock(jsonResponse, obj.title)+'" value="'+state_val+'">';
     }
     if (type_val == 'password') {
      if (action_val) action_val = 'onfocusout="send_request(this, \''+(typeof module_val!='undefined'&&module_val?'cmd?command=':'')+'\'+renameGet(\''+obj.action+'\'),\''+response_val+'\')"';
-     if (socket_val) action_val = 'onfocusout="send_socket(this, \'\', \''+socket_val+'\')"';
+     if (socket_val) action_val = 'onfocusout="send_socket(this, \'\', renameGet(\''+socket_val+'\'))"';
      element.innerHTML += '<input '+action_val+' id="'+name_val+'" class="form-control '+hidden+class_val+'" '+style_val+' '+(pattern_val?'pattern="'+pattern_val+'"':'')+' placeholder="'+renameBlock(jsonResponse, obj.title)+'" value="'+state_val+'" onfocus="this.type=\'text\'" type="password">';
     }
     if (type_val == 'button') {
      if (action_val) action_val = 'onclick="send_request(this, \''+(typeof module_val!='undefined'&&module_val?'cmd?command=':'')+'\'+renameGet(\''+obj.action+'\'),\''+response_val+'\')"';
-     if (socket_val) action_val = 'onclick="send_socket(this, \'\', \''+socket_val+'\')"';
+     if (socket_val) action_val = 'onclick="send_socket(this, \'\', renameGet(\''+socket_val+'\'))"';
      if (actiondown_val) actiondown_val = 'onmouseup="send_request(this, \''+(typeof module_val!='undefined'&&module_val?'cmd?command=':'')+'\'+renameGet(\''+obj.action+'\'),\''+response_val+'\')"';
      element.innerHTML += '<input id="'+name_val+'" '+action_val+' '+actiondown_val+' class="'+hidden+class_val+'" '+style_val+' value="'+renameBlock(jsonResponse, obj.title)+'" type="button">';
     }
@@ -411,23 +411,26 @@ function viewTemplate(jsonPage,jsonResponse,othe_opt) {
      var checked = '';
      if (!obj.design) {
       if (state_val == 1){ checked = 'checked'; }
-      if (action_val) { action_val = 'onchange="val(this.id,(this.checked?\'1\':\'0\'));send_request(this, \''+(typeof module_val!='undefined'&&module_val?'cmd?command=':'')+'\'+renameGet(\''+obj.action+'\'),\''+response_val+'\')"'; } else { action_val = 'onchange="val(this.id,(this.checked?\'1\':\'0\'));"'; }
+      if (action_val) { action_val = 'onchange="val(this.id,(this.checked?\'1\':\'0\'));send_request(this, \''+(typeof module_val!='undefined'&&module_val?'cmd?command=':'')+'\'+renameGet(\''+obj.action+'\'),\''+response_val+'\')"'; } else { action_val = 'onchange="val(this.id,(this.checked?\'1\':\'0\'));"'; };
+      if (socket_val) action_val = 'onchange="send_socket(this, \'\', renameGet(\''+socket_val+'\'))"';
       element.innerHTML += '<label '+style_val+'><input id="'+name_val+'" value="'+state_val+'" '+action_val+' type="checkbox" class="'+hidden+class_val+'" '+checked+'> '+renameBlock(jsonResponse, obj.title)+'<\/label>';
      } else {
       if (state_val == 0){ checked = 'checked=""'; }
       if (action_val) { action_val = 'onchange="val(this.id,(this.checked?\'0\':\'1\'));send_request(this, \''+(typeof module_val!='undefined'&&module_val?'cmd?command=':'')+'\'+renameGet(\''+obj.action+'\'),\''+response_val+'\')"'; } else { action_val = 'onchange="val(this.id,(this.checked?\'0\':\'1\'));"'; }
+      if (socket_val) action_val = 'onchange="send_socket(this, \'\', renameGet(\''+socket_val+'\'))"';
       element.innerHTML += '<div class="toggle-button-cover" '+style_val+'><div class="button-cover"><div class="button r '+obj.design+'"><input type="checkbox" id="'+name_val+'" '+action_val+' class="checkbox" '+checked+'><div class="knobs"></div><div class="layer"></div></div></div><label for="'+name_val+'">'+renameBlock(jsonResponse, obj.title)+'<\/label></div>';
      }
     }
     if (type_val == 'range') {
-     if (action_val) action_val = 'onchange="send_request(this, \''+(typeof module_val!='undefined'&&module_val?'cmd?command=':'')+'\'+renameGet(\''+obj.action+'\'),\''+response_val+'\')"';
+     if (action_val) action_val = 'onclick="send_request(this, \''+(typeof module_val!='undefined'&&module_val?'cmd?command=':'')+'\'+renameGet(\''+obj.action+'\'),\''+response_val+'\')"';
+     if (socket_val) action_val = 'onclick="send_socket(this, \'\', renameGet(\''+socket_val+'\'))"';
      element.innerHTML += '<div class="'+hidden+'"><label id="'+(name_val?'label-'+name_val:'')+'" '+style_val+' style="display:block;"><h4>'+renameBlock(jsonResponse, obj.title)+'<\/h4> <input id="'+name_val+'" class="form-control '+class_val+'" '+action_val+' '+pattern_val+' value="'+state_val+'" type="range"><\/label></div>';
     }
     if (type_val == 'range-dual') {
-     if (action_val) action_val = 'onclick="send_request(this, \''+(typeof module_val!='undefined'&&module_val?'cmd?command=':'')+'\'+renameGet(\''+obj.action+'\'),\''+response_val+'\')"';
-     if (socket_val) action_val = 'onclick="send_socket(this, \'\', renameGet(\''+socket_val+'\'))"';
-     if (state_val) { state_val = state_val.split(' '); }
-     element.innerHTML += '<style>.slider {--start:'+state_val[0]+'%;--end:'+state_val[1]+'%;}</style><div class="'+hidden+'"><label id="'+(name_val?'label-'+name_val:'')+'" '+style_val+' style="display:block;"><h4>'+renameBlock(jsonResponse, obj.title)+'<\/h4> <div class="slider"><input title="Range Left" id="'+name_val+'-left" type="range" value="'+state_val[0]+'" oninput="this.parentNode.style.setProperty(\'--start\', this.value + \'%\');" '+action_val+' '+pattern_val+'/><input title="Range Right" id="'+name_val+'-right" type="range" value="'+state_val[1]+'" oninput="this.parentNode.style.setProperty(\'--end\', this.value + \'%\');" '+action_val+' '+pattern_val+'/></div><\/label></div>';
+      if (action_val) action_val = 'onclick="send_request(this, \''+(typeof module_val!='undefined'&&module_val?'cmd?command=':'')+'\'+renameGet(\''+obj.action+'\'),\''+response_val+'\')"';
+      if (socket_val) action_val = 'onclick="send_socket(this, \'\', renameGet(\''+socket_val+'\'))"';
+      if (state_val) { state_val = state_val.split(' '); }
+      element.innerHTML += '<style>.slider {--start:'+state_val[0]+'%;--end:'+state_val[1]+'%;}</style><div class="'+hidden+'"><label id="'+(name_val?'label-'+name_val:'')+'" '+style_val+' style="display:block;"><h4>'+renameBlock(jsonResponse, obj.title)+'<\/h4> <div class="slider"><input title="Range Left" id="'+name_val+'-left" type="range" value="'+state_val[0]+'" oninput="this.parentNode.style.setProperty(\'--start\', this.value + \'%\');" '+action_val+' '+pattern_val+'/><input title="Range Right" id="'+name_val+'-right" type="range" value="'+state_val[1]+'" oninput="this.parentNode.style.setProperty(\'--end\', this.value + \'%\');" '+action_val+' '+pattern_val+'/></div><\/label></div>';
     }
     if (type_val == 'table') {
      var thead = '';
@@ -436,7 +439,7 @@ function viewTemplate(jsonPage,jsonResponse,othe_opt) {
     }
     if (type_val == 'select') {
      if (action_val) action_val = 'onchange="send_request(this, \''+(typeof module_val!='undefined'&&module_val?'cmd?command=':'')+'\'+renameGet(\''+obj.action+'\'),\''+response_val+'\')"';
-     if (socket_val) action_val = 'onchange="send_socket(this, \'\', \''+socket_val+'\')"';
+     if (socket_val) action_val = 'onchange="send_socket(this, \'\', renameGet(\''+socket_val+'\'))"';
      var option = '';
      jsonSelect = obj.title;
      if (isObject(jsonSelect)) {
@@ -739,7 +742,7 @@ function loadCSV(file,title) {
       var select_arr = table_td[y].split(",");
       select_html ='';
       for (var p = 0; p < select_arr.length; p++) {
-        select_html += '<option value="'+select_arr[p]+'">'+select_arr[p]+'<\/option>'; 
+        select_html += '<option value="'+select_arr[p]+'">'+select_arr[p]+'<\/option>';
       }
       tbody += '<td><select class="form-control">'+select_html+'<\/select><\/td>';
       */
@@ -765,7 +768,7 @@ function html_to_csv(file) {
    if (typeof cols[j].value !== "undefined") {
     fixed = cols[j].value;
    } else {
-    fixed = cols[j].innerHTML; 
+    fixed = cols[j].innerHTML;
    }
    if (fixed.indexOf("<input") == -1) {
      if (cols[j].innerHTML.indexOf("select") == 1) {
@@ -779,7 +782,7 @@ function html_to_csv(file) {
        row.push(select_new_final);
        j++;
       } else {
-       row.push(fixed); 
+       row.push(fixed);
      }
    }
   }
