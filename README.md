@@ -49,9 +49,8 @@ https://github.com/esp8266/arduino-esp8266fs-plugin
 
 ## :battery: Donation
 
-If you like this project, you can give me a cup of coffee :coffee:
+If you like this project, you can buy me a cup of coffee :coffee:
 
-- Bitcoin (BTC): 19xg6pA4RzSW3o4ZUyTyn5t4tY3tqLXHbe
-- TonCoin: UQBY_xXK_25L-UHq_h2ocfhS0c_lZoA4PIHxt-SktxLa_So7 
+<img src="https://github.com/renat2985/toncoin_payment/blob/main/doc/donate.png" width="700px">
+
 - PayPal [https://www.paypal.me/RKevrels](https://www.paypal.me/RKevrels/5)
-
