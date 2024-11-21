@@ -19,7 +19,7 @@ https://github.com/esp8266/arduino-esp8266fs-plugin
 
 # Download SPIFFS [data.zip](https://github.com/renat2985/easy_Iot_file_system/raw/master/data.zip)
 
-## [Demo](http://backup.privet.lv/easy_Iot_file_system/index.htm)
+## [Try Demo](http://backup.privet.lv/easy_Iot_file_system/index.htm)
 
 ## [Wiki](https://github.com/renat2985/easy_Iot_file_system/wiki)
 
@@ -34,13 +34,13 @@ https://github.com/esp8266/arduino-esp8266fs-plugin
 
 ## Проекты на этой файловой системе:
 
-### Пишите сюда свои, я их с удовольстием добавлю.
+#### Пишите сюда свои, я их с удовольстием добавлю.
 
-#### Jalousie: [https://github.com/tretyakovsa/jaluzi](https://github.com/tretyakovsa/jaluzi)
+Jalousie: [https://github.com/tretyakovsa/jaluzi](https://github.com/tretyakovsa/jaluzi)
 
-#### RGB: [https://github.com/renat2985/rgb](https://github.com/renat2985/rgb)
+RGB: [https://github.com/renat2985/rgb](https://github.com/renat2985/rgb)
 
-#### Sonoff_WiFi_switch: [https://github.com/tretyakovsa/Sonoff_WiFi_switch](https://github.com/tretyakovsa/Sonoff_WiFi_switch) 
+Sonoff_WiFi_switch: [https://github.com/tretyakovsa/Sonoff_WiFi_switch](https://github.com/tretyakovsa/Sonoff_WiFi_switch) 
 
 
 #### Themes you can download here: [https://bootswatch.com/3/](https://bootswatch.com/3/)
