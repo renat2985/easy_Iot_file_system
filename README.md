@@ -1,46 +1,45 @@
-# Easy Iot file system for ESP8266, ESP32
+# Простая файловая система для IoT (ESP8266, ESP32)
 
-<a href="https://raw.githubusercontent.com/renat2985/easy_Iot_file_system/master/img/screen4.png"><img src="https://raw.githubusercontent.com/renat2985/easy_Iot_file_system/master/img/screen4.png" align="left" height="220" width="400" ></a>
+![Скриншот](https://raw.githubusercontent.com/renat2985/easy_Iot_file_system/master/img/screen4.png)
 
+## Инструкция по загрузке
 
-# Upload instruction
-Вам нужно установить Arduino ESP8266 filesystem uploader
-https://github.com/esp8266/arduino-esp8266fs-plugin
+1. **Установите Arduino ESP8266 Filesystem Uploader**  
+   Скачать можно здесь: [Arduino ESP8266 Filesystem Uploader](https://github.com/esp8266/arduino-esp8266fs-plugin).
 
-А в этом проекте вам нужна папочка data, копируйте и помещяйте ее в своей проект. все остальные файлы нужны только мне для более удобной разработнки данного проекта.
+2. **Используйте папку `data`**  
+   В проекте есть папка `data`. Скопируйте её и добавьте в свой проект.  
+   Также вы можете скачать архив: [data.zip](https://github.com/renat2985/easy_Iot_file_system/raw/master/data.zip).
 
+3. **Дополнительно**  
+   Все остальные файлы предназначены исключительно для упрощения разработки.  
+   Для работы вам потребуется только папка `data`.
 
-## 
-## Specification
-Все файлы системы занимают ~70Кб.
+## Характеристики
 
+Все файлы системы занимают около 70 КБ.
 
+## Демо
 
+Вы можете протестировать демо-версию здесь: [Демо](http://backup.privet.lv/easy_Iot_file_system/index.htm).  
 
-# Download SPIFFS [data.zip](https://github.com/renat2985/easy_Iot_file_system/raw/master/data.zip)
+**Обратите внимание**: сохранение данных недоступно в демо-версии, но вы можете нажимать кнопку **View**, чтобы обновить и просмотреть данные.
 
-## [Try Demo](http://backup.privet.lv/easy_Iot_file_system/index.htm)
+## [Документация (Wiki)](https://github.com/renat2985/easy_Iot_file_system/wiki)
 
-## [Wiki](https://github.com/renat2985/easy_Iot_file_system/wiki)
+## Пример работы (Видео)
 
+[![Посмотреть на YouTube](https://img.youtube.com/vi/rNLlpkg2BGI/0.jpg)](https://www.youtube.com/playlist?list=PL6NJTNxbvy-IPTDQk8XjTV41oRrFafrRi)
 
+## Проекты работающие на этой файловой системе:
 
-## Work example (Video)
+#### Делитесь своими проектами с нами, и мы с радостью добавим их сюда!
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/rNLlpkg2BGI/0.jpg)](https://www.youtube.com/playlist?list=PL6NJTNxbvy-IPTDQk8XjTV41oRrFafrRi)
+  - Jalousie: [https://github.com/tretyakovsa/jaluzi](https://github.com/tretyakovsa/jaluzi)
 
+  - RGB: [https://github.com/renat2985/rgb](https://github.com/renat2985/rgb)
 
-
-
-## Проекты на этой файловой системе:
-
-#### Пишите сюда свои, я их с удовольстием добавлю.
-
-Jalousie: [https://github.com/tretyakovsa/jaluzi](https://github.com/tretyakovsa/jaluzi)
-
-RGB: [https://github.com/renat2985/rgb](https://github.com/renat2985/rgb)
-
-Sonoff_WiFi_switch: [https://github.com/tretyakovsa/Sonoff_WiFi_switch](https://github.com/tretyakovsa/Sonoff_WiFi_switch) 
+  - Sonoff_WiFi_switch: [https://github.com/tretyakovsa/Sonoff_WiFi_switch](https://github.com/tretyakovsa/Sonoff_WiFi_switch) 
 
 
 #### Themes you can download here: [https://bootswatch.com/3/](https://bootswatch.com/3/)
