@@ -5,7 +5,17 @@
 ## Инструкция по загрузке
 
 1. **Установите Arduino ESP8266 Filesystem Uploader**
-   
+
+   _Эли плагины работают до Arduino IDE versions: 1.8_
+
+   - Для **ESP8266** (spiffs):  
+     Скачать плагин можно здесь: [Arduino ESP8266 Filesystem Uploader](https://github.com/esp8266/arduino-esp8266fs-plugin).  
+   - Для **ESP32** (spiffs):  
+     Скачать плагин можно здесь: [Arduino ESP32 Filesystem Uploader](https://github.com/me-no-dev/arduino-esp32fs-plugin).  
+   - Для **ESP8266 и ESP32** (LittleFS):  
+     Скачать плагин можно здесь: [Arduino LittleFS Uploader](https://github.com/lorol/arduino-esp32littlefs-plugin/releases).
+
+
    _Эли плагины работают до Arduino IDE versions: 1.8_
    - Для **ESP8266**:  
      Скачать плагин можно здесь: [Arduino ESP8266 Filesystem Uploader](https://github.com/esp8266/arduino-esp8266fs-plugin).  
