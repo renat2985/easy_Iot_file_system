@@ -15,14 +15,6 @@
    - Для **ESP8266 и ESP32** (LittleFS):  
      Скачать плагин можно здесь: [Arduino LittleFS Uploader](https://github.com/lorol/arduino-esp32littlefs-plugin/releases).
 
-
-   _Эли плагины работают до Arduino IDE versions: 1.8_
-   - Для **ESP8266**:  
-     Скачать плагин можно здесь: [Arduino ESP8266 Filesystem Uploader](https://github.com/esp8266/arduino-esp8266fs-plugin).  
-   - Для **ESP32**:  
-     Скачать плагин можно здесь: [Arduino ESP32 Filesystem Uploader](https://github.com/me-no-dev/arduino-esp32fs-plugin).
-
-
 3. **Используйте папку `data`**  
    В проекте есть папка `data`. Скопируйте её и добавьте в свой проект.  
    Также вы можете скачать архив: [data.zip](https://github.com/renat2985/easy_Iot_file_system/raw/master/data.zip).
