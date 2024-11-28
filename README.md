@@ -4,14 +4,20 @@
 
 ## Инструкция по загрузке
 
-1. **Установите Arduino ESP8266 Filesystem Uploader**  
-   Скачать можно здесь: [Arduino ESP8266 Filesystem Uploader](https://github.com/esp8266/arduino-esp8266fs-plugin).
+1. **Установите Arduino ESP8266 Filesystem Uploader**
+   
+   _Эли плагины работают до Arduino IDE versions: 1.8_
+   - Для **ESP8266**:  
+     Скачать плагин можно здесь: [Arduino ESP8266 Filesystem Uploader](https://github.com/esp8266/arduino-esp8266fs-plugin).  
+   - Для **ESP32**:  
+     Скачать плагин можно здесь: [Arduino ESP32 Filesystem Uploader](https://github.com/me-no-dev/arduino-esp32fs-plugin).
 
-2. **Используйте папку `data`**  
+
+3. **Используйте папку `data`**  
    В проекте есть папка `data`. Скопируйте её и добавьте в свой проект.  
    Также вы можете скачать архив: [data.zip](https://github.com/renat2985/easy_Iot_file_system/raw/master/data.zip).
 
-3. **Дополнительно**  
+4. **Дополнительно**  
    Все остальные файлы предназначены исключительно для упрощения разработки.  
    Для работы вам потребуется только папка `data`.
 
