@@ -4,7 +4,7 @@
 
 ## Инструкция по загрузке
 
-1. **Установите Arduino ESP8266 Filesystem Uploader**
+1. **Установите Arduino Filesystem Uploader**
 
    _Эли плагины работают до Arduino IDE versions: 1.8_
 
